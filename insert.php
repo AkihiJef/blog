@@ -19,7 +19,6 @@
   		{
   			die('Error: ' . mysql_error());
   		}
-  		echo "meiyou";
   	}
   	else
   	{
@@ -27,7 +26,6 @@
   		$sql2 = "update articles set text =  '$main' where id = $id";
   		mysql_query($sql1,$con);
   		mysql_query($sql2,$con);
-  		echo $id;
   	}
 	mysql_close($con);
 ?>

@@ -30,7 +30,7 @@
 </head>
 <body>
 <form action="index.php"><input type="submit" value="返回文章列表" ></form>
-<form action="delete.php"><input type="hidden"  name="id" value="<?php echo $id; ?>" ><input type="submit" value="删除本篇" ></form>
+<form action="delete.php" method="post"><input type="hidden" name="id" value="<?php echo $id; ?>" ><input type="submit" value="删除本篇"></form>
 <fieldset>
 	<legend>编辑文章</legend>
 	 <form  method="post", action="insert.php">

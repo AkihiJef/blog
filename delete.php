@@ -6,8 +6,7 @@
  		die('Could not connect: ' . mysql_error());
  	}
  	mysql_select_db("blog", $con);
-
- 	$sql = sprintf("DELETE * FROM articles  WHERE id  = %d",$_POST['id']);
+ 	$sql = "DELETE  FROM articles  WHERE id =" . $_POST['id'];
  	mysql_query($sql, $con);
  	mysql_close($con);
 ?>

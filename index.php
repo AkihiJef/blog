@@ -20,7 +20,11 @@
         die("query failed");  
     }  
     echo "共有$count[0] 篇文章<br />";  
-      
+?>
+<form action="edit.php", method="post">
+        <input type="submit" value="新文章" >
+</form>
+ <?php
     $sql = "select * from articles";  
     $result = mysql_query($sql, $con);  
     while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
