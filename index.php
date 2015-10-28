@@ -21,6 +21,7 @@
 ?>
 
 <form action="back.php"><input type="submit" value="管理文章" ></form>
+<a href="fa.php?id=54188">test</a>
 
 <?php
 	echo "共有 $count[0] 篇文章<br /><br />";  
