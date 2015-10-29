@@ -9,9 +9,9 @@
 	}
 	mysql_select_db("blog", $con);
 
-	$id = $_POST['id'];
-	$title = $_POST['title'];
-	$main = $_POST['main'];
+	$id = $_GET['id'];
+	$title = $_GET['title'];
+	$main = $_GET['main'];
 
 	if($id == 0)  {
 		$time = date("y-m-d H:i:s",time());

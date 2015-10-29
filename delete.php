@@ -8,7 +8,7 @@
 	}
 	mysql_select_db("blog", $con);
 
-	$sql = "DELETE  FROM articles  WHERE id =" . $_POST['id'];
+	$sql = "DELETE  FROM articles  WHERE id =" . $_GET['id'];
 	mysql_query($sql, $con);
 	mysql_close($con);
 

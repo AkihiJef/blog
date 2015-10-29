@@ -9,13 +9,13 @@
 	}
 	mysql_select_db("blog", $con);
 
-	$sql = sprintf("SELECT * FROM articles  WHERE id  = %d",$_POST['id']);
+	$sql = sprintf("SELECT * FROM articles  WHERE id  = %d",$_GET['id']);
 	$result = mysql_query($sql,$con);
 	$row = mysql_fetch_array($result, MYSQL_ASSOC);
 
 	$title = $row['title'];
 	$main = $row['main'];	
-	$id = $_POST['id'];
+	$id = $row['id'];
 	$time = $row['time'];
 	$view = $row['view']+1;
 
