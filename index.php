@@ -25,8 +25,9 @@
 <?php
 
 	echo "共有 $count[0] 篇文章<br /><br />";  
-
-	$sql = "SELECT * FROM articles";  
+	$lenth = 5;
+	$flag = $_GET['page'] * $lenth;
+	$sql = "SELECT * FROM articles LIMIT $flag, $lenth";  
 	$result = mysql_query($sql, $con);  
 
 	while ($row = mysql_fetch_array($result, MYSQL_ASSOC))  {  
@@ -35,6 +36,12 @@
 		$part_of_article = mb_substr($row['main'], 0, 50, 'utf-8');
 		echo $part_of_article . '......</br>';
 	}  
+
+	for ($i=0; $i < $count[0] / $lenth; $i++) { 
+		$t = $i + 1;
+		if($i != $_GET['page'])echo '<a href="index.php?page=' . $i . '"> ' . $t . ' </a>';
+		else echo $_GET['page']+1;
+	}
 
 	mysql_close($con);
 
