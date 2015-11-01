@@ -18,11 +18,7 @@
 		die("query failed");  
 	}  
 
-?>
-
-<form action="back.php"><input type="submit" value="管理文章" ></form>
-
-<?php
+	echo '<form action="back.php"><input type="submit" value="管理文章" ></form>';
 
 	echo "共有 $count[0] 篇文章<br /><br />";  
 	$lenth = 5;
