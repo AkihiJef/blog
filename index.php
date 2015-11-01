@@ -27,7 +27,7 @@
 	echo "共有 $count[0] 篇文章<br /><br />";  
 	$lenth = 5;
 	$flag = $_GET['page'] * $lenth;
-	$sql = "SELECT * FROM articles LIMIT $flag, $lenth";  
+	$sql = "SELECT * FROM articles LIMIT $flag, $lenth";
 	$result = mysql_query($sql, $con);  
 
 	while ($row = mysql_fetch_array($result, MYSQL_ASSOC))  {  

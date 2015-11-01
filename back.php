@@ -8,7 +8,7 @@
 	}
 	mysql_select_db("blog", $con);
 
-	$sql = "select count(*) from articles";  
+	$sql = "SELECT COUNT(*) FROM articles";  
 	$result = mysql_query($sql, $con);  
 
 	if ($result)  {  
@@ -18,12 +18,9 @@
 		die("query failed");  
 	}  
 
-?>
+	echo '<form action="index.php"><input type="submit" value="展示文章" ></form>';
+	echo '<form action="edit.php"><input type="submit" value="新文章" ></form>';
 
-<form action="index.php"><input type="submit" value="展示文章" ></form>
-<form action="edit.php"><input type="submit" value="新文章" ></form>
-
-<?php
 	echo "共有 $count[0] 篇文章<br /><br />";  
 
 	$lenth = 5;

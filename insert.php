@@ -3,15 +3,14 @@
 	include("head.html");
 
 	$con = mysql_connect("localhost","root","finifugal");
-	if (!$con)
-	{
+	if (!$con)  {
 		die('Could not connect: ' . mysql_error());
 	}
 	mysql_select_db("blog", $con);
 
-	$id = $_GET['id'];
-	$title = $_GET['title'];
-	$main = $_GET['main'];
+	$id = $_POST['id'];
+	$title = $_POST['title'];
+	$main = $_POST['main'];
 
 	if($id == 0)  {
 		$time = date("y-m-d H:i:s",time());
@@ -24,12 +23,8 @@
 		}
 	}
 	else  {
-		$sql1 = "update articles set title =  '$title' where id = $id";
-		$sql2 = "update articles set main =  '$main' where id = $id";
-		if (!mysql_query($sql1,$con))  {
-			die('Error: ' . mysql_error());
-		}
-		if (!mysql_query($sql2,$con))  {
+		$sql = "UPDATE articles SET title =  '$title',main =  '$main' WHERE id = $id";
+		if (!mysql_query($sql,$con))  {
 			die('Error: ' . mysql_error());
 		}
 	}

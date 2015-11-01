@@ -35,7 +35,7 @@
 
 		<fieldset>
 			<legend>编辑文章</legend>
-			<form  method="GET", action="insert.php">
+			<form  method="POST", action="insert.php">
 				TITLE: <input type="text" size="80" name ="title"  value="<?php echo $title; ?>" required="required" >
 				<input type="submit" value="发布" ></br>
 				<textarea type="text" name="main" style="width:1200px;height:500px;"><?php echo $main; ?></textarea>
